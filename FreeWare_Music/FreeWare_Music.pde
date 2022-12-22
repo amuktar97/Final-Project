@@ -16,7 +16,8 @@ void setup() {
   song1 = minim.loadFile("../FreeWare_Music/Music/Beat_Your_Competition.mp3"); //able to pass absolute path, file name & extension, and URL
 }//End setup 
 //
-void draw() {}//End draw
+void draw() {
+}//End draw
 //
 void keyPressed() {
   //Key Board Short Cuts
@@ -27,8 +28,25 @@ void keyPressed() {
   //Infinite Loop
   if ( key=='I' || key=='i' ) song1.loop(); //Parameter is empty, means infinite looping (could be -1)
   //
+  if ( key=='M' || key=='m' ) { //MUTE Button
+    //Note: Mute has NO built-in pause button and NO built-in rewind if the song is near the end of the file
+    //Note: this MUTE algorithm is not smart
+    //Known ERROR: once song plays, MUTE acts like it doesn't work
+    if ( song1.isMuted() ) { 
+      song1.unmute();
+    } else { 
+      song1.mute();
+    }
+  } //End MUTE Button
+  //
+  //Fast Forward & Fast Reverse
+  //Built in Question: 
+  if () ;
+  if () ;
+  //
 }//End keyPressed
 //
-void mouseClicked() {}//End mousePressed
+void mouseClicked() {
+}//End mousePressed
 //
 //End Main Program
