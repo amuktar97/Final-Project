@@ -14,7 +14,6 @@ void setup() {
   //size(500, 600); //Remind you of Display Geometry
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
   song1 = minim.loadFile("../FreeWare_Music/Music/Beat_Your_Competition.mp3"); //able to pass absolute path, file name & extension, and URL
-  //song1.play(); //Parameter is milli-seconds from start of audio file to start playing
 }//End setup 
 //
 void draw() {}//End draw
@@ -25,6 +24,8 @@ void keyPressed() {
   if ( key=='P' || key=='p' ) song1.play(); //Parameter is milli-seconds from start of audio file to start playing
   //Second Play Button, Loop ONCE
   if ( key=='L' || key=='l'  ) song1.loop(1); //Parameter is Parameter is number of repeats
+  //Infinite Loop
+  if ( key=='I' || key=='i' ) song1.loop(); //Parameter is empty, means infinite looping (could be -1)
   //
 }//End keyPressed
 //
