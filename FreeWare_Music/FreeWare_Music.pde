@@ -41,9 +41,17 @@ void keyPressed() {
   //
   //Fast Forward & Fast Reverse
   //Built in Question: 
-  if () ;
-  if () ;
+  if ( key == 'F' || key == 'f') song1.skip( 1000 ); // skip forward 1 second (1000 milliseconds)
+  if ( key == 'R' || key == 'R') song1.skip( -1000 ); // skip backwards 1 second, notice negative, (1000 milliseconds)
   //
+  //STOP Button
+  if ( key == 'S' || key == 's' ) {
+    if ( song1.isPlaying() ) {
+      song1.pause();
+    } else {
+      song1.rewind(); //Not playing means song is paused or song position is at the end of the file
+    }
+  }//End STOP Button
 }//End keyPressed
 //
 void mouseClicked() {
